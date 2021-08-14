@@ -1,0 +1,13 @@
+.fas, .fal{
+    display: none;
+    font-size: 20px;
+    @media (max-width: 767px) {
+      position: absolute;
+      top: 21px;
+      right: 19px;
+      color: white;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+    }
+}
