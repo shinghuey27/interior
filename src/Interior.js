@@ -1,12 +1,7 @@
 import styles from "./interior.module.scss";
 import "./icon.scss";
-import { useState } from "react";
-const Interior = () => {
-  const [menu, setMenu] = useState(false);
+const Interior = (props) => {
 
-  const handleMenuClick = (event) => {
-    setMenu(!menu);
-  };
   return (
     <main>
       <header className={styles.header}>
@@ -14,7 +9,7 @@ const Interior = () => {
           <h1 className={styles.overviewTitle}>This interior</h1>
         </div>
         <nav>
-          <ul className={menu ? styles.listOverviewOpen : styles.listOverview}>
+          <ul className={props.menu ? styles.listOverviewOpen : styles.listOverview}>
             <li className={styles.list}>
               <a className={styles.navLink} href="/">
                 Home
@@ -35,8 +30,8 @@ const Interior = () => {
             </li>
           </ul>
           <i
-            onClick={handleMenuClick}
-            className={`${menu ?  "fas fa-times" : "fal fa-bars" }`}
+            onClick={props.handleMenuClick}
+            className={`${props.menu ?  "fas fa-times" : "fal fa-bars" }`}
           />
         </nav>
       </header>
